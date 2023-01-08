@@ -19,8 +19,8 @@ public class PeopleController {
         List<Person> people = List.of(
                 new Person(10l, "Wojciech", "Langowski", LocalDate.of(1983, 7, 16), new BigDecimal(14000)),
                 new Person(20l, "Marta", "Langowska", LocalDate.of(1985, 8, 20), new BigDecimal(5500)),
-                new Person(30l, "Nadia", "Langowska", LocalDate.of(2013, 2, 19), new BigDecimal(10)),
-                new Person(40l, "Michalina", "Langowska", LocalDate.of(2014, 2, 19), new BigDecimal(10))
+                new Person(30l, "Nadia", "Langowska", LocalDate.of(2013, 2, 19), new BigDecimal(100)),
+                new Person(40l, "Michalina", "Langowska", LocalDate.of(2014, 2, 19), new BigDecimal(100))
         );
 
         model.addAttribute("people", people);
