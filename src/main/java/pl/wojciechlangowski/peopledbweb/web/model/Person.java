@@ -1,4 +1,4 @@
-package pl.wojciechlangowski.peopledbweb.web.biz.model;
+package pl.wojciechlangowski.peopledbweb.web.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

@@ -5,25 +5,56 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import pl.wojciechlangowski.peopledbweb.web.biz.model.Person;
+import pl.wojciechlangowski.peopledbweb.web.components.LEMgetDataRequest;
 
-import java.math.BigDecimal;
-import java.time.LocalDate;
-import java.util.List;
+import java.io.IOException;
+import java.net.URISyntaxException;
 
 @Controller
-@RequestMapping("/people")
+@RequestMapping("/lemresponsedata")
 public class PeopleController {
     @GetMapping
-    public String getPeople(Model model) {
-        List<Person> people = List.of(
-                new Person(10l, "Wojciech", "Langowski", LocalDate.of(1983, 7, 16), new BigDecimal(14000)),
-                new Person(20l, "Marta", "Langowska", LocalDate.of(1985, 8, 20), new BigDecimal(5500)),
-                new Person(30l, "Nadia", "Langowska", LocalDate.of(2013, 2, 19), new BigDecimal(100)),
-                new Person(40l, "Michalina", "Langowska", LocalDate.of(2014, 2, 19), new BigDecimal(100))
-        );
+    public String getPeople(Model model) throws URISyntaxException, IOException, InterruptedException {
+//
+//        int maxLineNumberInclusive = 11;
+//        int minLineNUmberInclusive = 1;
+//        String authorizationKey = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MjI1ZjM5NDliNTMwYzAwMWZmYjQ3ZTkiLCJpYXQiOjE2NDY2NTQzNzYzMDN9.X3tvfka2zIcZj1hdNxj0htqH2HWBXnf1JaktE7dmGK8";
+//        String siteAddress = "https://riverdi-lem.herokuapp.com/api/lineorder/";
+//
+//        HttpResponse httpResponse = null;
+//        LEMentity LEMdataRow = null;
+//        ObjectMapper mapper = new ObjectMapper();
+//        List<LEMentity> leMentities = new ArrayList<>();
+//        for (int i = minLineNUmberInclusive; i <= maxLineNumberInclusive; i++) {
+//            StringBuilder stringBuilder = new StringBuilder(siteAddress);
+//            if (i < 10) {
+//                stringBuilder.append("0").append(i);
+//            } else {
+//                stringBuilder.append(i);
+//            }
+//
+//            HttpClient client = HttpClient.newHttpClient();
+//
+//            HttpRequest request = HttpRequest.newBuilder()
+//                    .uri(new URI(stringBuilder
+//                            .toString()))
+//                    .header("authorization", authorizationKey)
+//                    .timeout(Duration.ofSeconds(10))
+//                    .GET()
+//                    .build();
+//
+//            httpResponse = client.send(request, HttpResponse.BodyHandlers.ofString());
+//            LEMdataRow = mapper.readValue(httpResponse.body().toString(), LEMentity.class);
+//            leMentities.add(LEMdataRow);
+//        }
+//        System.out.println("Entity static method: " + leMentities);
 
-        model.addAttribute("people", people);
-        return "people";
+        LEMgetDataRequest leMgetDataRequest = new LEMgetDataRequest();
+        leMgetDataRequest.LEMgetData();
+
+
+        model.addAttribute("lemresponsedata", leMgetDataRequest.LEMgetData());
+//        model.addAttribute("lemresponsedata", leMentities);
+        return "lemresponsedata";
     }
 }

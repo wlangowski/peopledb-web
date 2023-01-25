@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+            crossorigin="anonymous"></script>
+    <title>LEM PRODUCTS STATISTICS</title>
+</head>
+<body>
+
+<h1>LEM: product statistics</h1>
+
+<!--Here are some people:-->
+<!--<ol>-->
+<!--    <li th:each="lementity: ${lemresponsedata}" th:text="${lementity}">My Junk Person</li>-->
+<!--</ol>-->
+
+<div class="col-3 mx-auto">
+    <table class="table table-striped">
+        <thead class="table-dark">
+        <tr>
+            <th scope="col">Prod PN</th>
+            <th scope="col">Given hrly rate</th>
+            <th scope="col">Given tact time</th>
+            <th scope="col">Suggested tact time</th>
+            <th scope="col">Clean Room Time</th>
+            <!--            <th scope="col">DOB</th>-->
+            <!--            <th scope="col">Salary</th>-->
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="lementity: ${#lists.sort(message)}">
+            <td th:text="${lementity.getPartNumber()}">Prod PN</td>
+            <td th:text="${lementity.getGivenHourlyRate()}">Given hrly rate</td>
+            <td th:text="${lementity.getGivenTactTime()}">ID</td>
+            <td th:text="${lementity.getSuggestedTactTime()}">ID</td>
+            <td th:text="${lementity.getCleanRoomTime()}">ID</td>
+            <!--            <td th:text="${message}">Mark</td>-->
+            <!--            <th th:text="${message}">1</th>-->
+            <!--            <td th:text="${person.dob}">@mdo</td>-->
+            <!--            <td th:text="${person.salary}">@mdo</td>-->
+        </tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+</body>
+</html>
