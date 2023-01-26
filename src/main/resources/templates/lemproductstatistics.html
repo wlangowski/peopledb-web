@@ -32,7 +32,7 @@
         </tr>
         </thead>
         <tbody>
-        <tr th:each="lementity: ${#lists.sort(message)}">
+        <tr th:each="lementity: ${message}">
             <td th:text="${lementity.getPartNumber()}">Prod PN</td>
             <td th:text="${lementity.getGivenHourlyRate()}">Given hrly rate</td>
             <td th:text="${lementity.getGivenTactTime()}">ID</td>

@@ -1,4 +1,4 @@
-package pl.wojciechlangowski.peopledbweb.web.components;
+package pl.wojciechlangowski.peopledbweb.web.service;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import pl.wojciechlangowski.peopledbweb.web.model.LEMentity;
@@ -8,7 +8,7 @@ import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class LEMobjectMapper {
+public class LEMobjectMapperService {
     public void mapLemEntity(String leMgetResponse) throws IOException, InterruptedException, URISyntaxException {
         List<LEMentity> lemEntities = new ArrayList<>();
         ObjectMapper objectMapper = new ObjectMapper();

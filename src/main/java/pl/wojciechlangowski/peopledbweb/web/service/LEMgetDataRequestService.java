@@ -1,4 +1,4 @@
-package pl.wojciechlangowski.peopledbweb.web.components;
+package pl.wojciechlangowski.peopledbweb.web.service;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import pl.wojciechlangowski.peopledbweb.web.model.LEMentity;
@@ -13,11 +13,11 @@ import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
 
-public class LEMgetDataRequest {
-    private String lemUri = "https://riverdi-lem.herokuapp.com/api/lineorder/";
-    private String lemAuthorizationKey = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MjI1ZjM5NDliNTMwYzAwMWZmYjQ3ZTkiLCJpYXQiOjE2NDY2NTQzNzYzMDN9.X3tvfka2zIcZj1hdNxj0htqH2HWBXnf1JaktE7dmGK8";
-    private byte minLineNumber = 1;
-    private byte maxLineNumber = 11;
+public class LEMgetDataRequestService {
+    private final String lemUri = "https://riverdi-lem.herokuapp.com/api/lineorder/";
+    private final String lemAuthorizationKey = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MjI1ZjM5NDliNTMwYzAwMWZmYjQ3ZTkiLCJpYXQiOjE2NDY2NTQzNzYzMDN9.X3tvfka2zIcZj1hdNxj0htqH2HWBXnf1JaktE7dmGK8";
+    private final byte minLineNumber = 1;
+    private final byte maxLineNumber = 11;
 
     public List<LEMentity> LEMgetData() throws IOException, InterruptedException, URISyntaxException {
 

@@ -5,14 +5,14 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import pl.wojciechlangowski.peopledbweb.web.components.LEMgetDataRequest;
+import pl.wojciechlangowski.peopledbweb.web.service.LEMgetDataRequestService;
 
 import java.io.IOException;
 import java.net.URISyntaxException;
 
 @Controller
 @RequestMapping("/lemresponsedata")
-public class PeopleController {
+public class LemLineOrderStatus {
     @GetMapping
     public String getPeople(Model model) throws URISyntaxException, IOException, InterruptedException {
 //
@@ -49,7 +49,7 @@ public class PeopleController {
 //        }
 //        System.out.println("Entity static method: " + leMentities);
 
-        LEMgetDataRequest leMgetDataRequest = new LEMgetDataRequest();
+        LEMgetDataRequestService leMgetDataRequest = new LEMgetDataRequestService();
         leMgetDataRequest.LEMgetData();
 
 
