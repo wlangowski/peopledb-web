@@ -5,10 +5,10 @@ import lombok.Data;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
-import java.util.function.BiConsumer;
+
 @Data
 @AllArgsConstructor
-public class Person {
+public class PersonModel {
     private Long id;
     private String firstName;
     private String lastName;

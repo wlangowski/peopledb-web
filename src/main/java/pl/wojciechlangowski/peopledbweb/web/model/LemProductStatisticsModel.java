@@ -1,6 +1,6 @@
 package pl.wojciechlangowski.peopledbweb.web.model;
 
-public class LemProductStatistics {
+public class LemProductStatisticsModel {
 
 
     private int givenHourlyRate;
@@ -14,10 +14,10 @@ public class LemProductStatistics {
     private String partNumber;
     private int __v;
 
-    public LemProductStatistics() {
+    public LemProductStatisticsModel() {
     }
 
-    public LemProductStatistics(int givenHourlyRate, int suggestedHourlyRate, int givenTactTime, int suggestedTactTime, int xlsxTactTime, int cleanRoomTime, boolean automatic, String _id, String partNumber, int __v) {
+    public LemProductStatisticsModel(int givenHourlyRate, int suggestedHourlyRate, int givenTactTime, int suggestedTactTime, int xlsxTactTime, int cleanRoomTime, boolean automatic, String _id, String partNumber, int __v) {
         this.givenHourlyRate = givenHourlyRate;
         this.suggestedHourlyRate = suggestedHourlyRate;
         this.givenTactTime = givenTactTime;

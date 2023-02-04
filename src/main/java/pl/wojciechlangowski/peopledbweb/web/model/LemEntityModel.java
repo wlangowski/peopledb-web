@@ -1,17 +1,17 @@
 package pl.wojciechlangowski.peopledbweb.web.model;
 
 
-public class LEMentity {
+public class LemEntityModel {
     private String orderStatus;
 
     private String orderNumber;
     private String line;
 
-    public LEMentity() {
+    public LemEntityModel() {
     }
 
 
-    public LEMentity(String orderStatus, String orderNumber, String line) {
+    public LemEntityModel(String orderStatus, String orderNumber, String line) {
         this.orderStatus = orderStatus;
         this.orderNumber = orderNumber;
         this.line = line;

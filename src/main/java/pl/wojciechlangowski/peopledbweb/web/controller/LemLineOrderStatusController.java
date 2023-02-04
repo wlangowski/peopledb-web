@@ -12,7 +12,7 @@ import java.net.URISyntaxException;
 
 @Controller
 @RequestMapping("/lemresponsedata")
-public class LemLineOrderStatus {
+public class LemLineOrderStatusController {
     @GetMapping
     public String getPeople(Model model) throws URISyntaxException, IOException, InterruptedException {
 //

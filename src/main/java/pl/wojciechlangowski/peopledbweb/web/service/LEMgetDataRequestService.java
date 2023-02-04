@@ -1,7 +1,7 @@
 package pl.wojciechlangowski.peopledbweb.web.service;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import pl.wojciechlangowski.peopledbweb.web.model.LEMentity;
+import pl.wojciechlangowski.peopledbweb.web.model.LemEntityModel;
 
 import java.io.IOException;
 import java.net.URI;
@@ -19,10 +19,10 @@ public class LEMgetDataRequestService {
     private final byte minLineNumber = 1;
     private final byte maxLineNumber = 11;
 
-    public List<LEMentity> LEMgetData() throws IOException, InterruptedException, URISyntaxException {
+    public List<LemEntityModel> LEMgetData() throws IOException, InterruptedException, URISyntaxException {
 
         ObjectMapper objectMapper = new ObjectMapper();
-        List<LEMentity> lemEntityList = new ArrayList<>();
+        List<LemEntityModel> lemEntityList = new ArrayList<>();
         HttpResponse httpResponse = null;
         for (int i = minLineNumber; i <= maxLineNumber; i++) {
             StringBuilder uriBuilder = new StringBuilder(lemUri);
@@ -32,7 +32,7 @@ public class LEMgetDataRequestService {
 
             HttpRequest httpRequest = HttpRequest.newBuilder().uri(new URI(uriBuilder.toString())).header("authorization", lemAuthorizationKey).timeout(Duration.ofSeconds(10)).GET().build();
             httpResponse = HttpClient.newHttpClient().send(httpRequest, HttpResponse.BodyHandlers.ofString());
-            LEMentity lemEntity = objectMapper.readValue(httpResponse.body().toString(), LEMentity.class);
+            LemEntityModel lemEntity = objectMapper.readValue(httpResponse.body().toString(), LemEntityModel.class);
             lemEntityList.add(lemEntity);
 
         }
